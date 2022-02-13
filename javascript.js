@@ -1,22 +1,11 @@
 let QuoteList = [];
 let txtQuote = document.getElementById("text");
 let txtArthor = document.getElementById("author");
-let BtnTw = document.getElementById("twitter");
+let BtnAudio = document.getElementById("audio");
 let BtnNextQuote = document.getElementById("new-quote");
 let quoteContainer = document.getElementById("quote-container")
 let loader = document.getElementById("loader");
-
-
-// facebook config
-window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '651288402819014',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v12.0'
-    });
-  };
-
+let audioSrc = document.getElementById("myAudio");
 
 // Loading
 function loading(){
@@ -38,7 +27,7 @@ function newQuote(){
     {
         txtArthor.textContent = "Unknown";
     }else{
-        txtArthor.textContent = randomQuote.author;
+        txtArthor.textContent = "Summer";
     }
 
     if(randomQuote.text.length > 100){
@@ -47,6 +36,7 @@ function newQuote(){
         txtQuote.classList.remove("quote-longtext");
     }
 
+    audioSrc.src = randomQuote.audio;
     txtQuote.textContent = randomQuote.text;
 }
 
@@ -83,16 +73,12 @@ async function getQuote(){
 
 // }
 
-
-// Tweet Quote
-function tweetQuote(){
-    const TwitterUrl = `https://twitter.com/intent/tweet?text=${txtQuote.innerText} - ${txtArthor.innerText}`;
-    window.open(TwitterUrl, '_blank');
+function playAudio(){
+    audioSrc.play();
 }
 
-
 BtnNextQuote.addEventListener('click', newQuote);
-BtnTw.addEventListener('click', tweetQuote);
+BtnAudio.addEventListener('click', playAudio);
 
 getQuote();
 

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- import font-awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Quote Generator</title>
+    <title>Love Quote</title>
     <!-- set up the page icon -->
     <link rel="icon" type="image/png" href="./icon.png">
     <link rel="stylesheet" href="./style.css">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <!-- <script src="./Quote.json"></script>  -->
+    <script src="./Quote.json"></script> 
 </head>
 
 <body> 
@@ -20,24 +20,28 @@
             <!-- Quote -->
             <div class="quote-text">
                 <i class="fas fa-quote-left"></i>
-                    <span id="text">What you are is what you have been. What you will be is what you are doing.</span> 
+                    <span id="text">我愛寶寶</span> 
             </div>
             <!-- Author -->
             <div class="quote-author">
-                <span id="author">Budda</span>
+                <span id="author">Summer</span>
             </div>
+            <!-- Audio -->
+            <audio id="myAudio">
+                Your browser does not support the audio element.
+            </audio>
+
             <!-- Button -->
             <div class="button-container">
-                <button class="tw-button" id="twitter" title="Post it!">
-                    <i class="fab fa-twitter"></i>
-                </button>
-                <button id="new-quote">New Quote</button>
-                
+                <button id="audio"><i class="fas fa-play" title="聽聽我的聲音"></i></button>
+                <button id="new-quote">Next</button>
             </div>
         </div>
         <!-- Facebook share -->
         <div class="fb-share-button" data-href="https://k18382003.github.io/QuoteGenerator/" data-layout="button_count" data-size="small">
         </div>
+           
+        </button>
     </div>  
 
     <!-- Loader -->
